@@ -1,27 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Innovation Apps</title>
-    <style>
-        body {
-      margin: 0;
-      padding: 0;
-      background-color: #10144a; /* Altere essa cor para combinar com a imagem */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    img {
-      max-width: 90%;
-      height: auto;
-    }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Aplicativos</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="assets/images/code-innovation-apps-img.png" alt="Code Innovation Apps">
+  <header>
+    <!-- Logo da empresa -->
+    <img src="assets/images/code-innovation-apps-img.png" alt="Logo Code Innovation">
+    <h1>Baixe nossos aplicativos</h1>
+  </header>
+
+  <div class="container">
+  <!-- Card 1 - Minhas Despesas -->
+  <div class="card">
+    <img class="minhas-despesas-icon" src="assets/images/minhas-despesas-icon.png" alt="Minhas Despesas">
+    <h2>Minhas Despesas</h2>
+    <a href="https://play.google.com/store/apps/details?id=br.com.codeinnovationapps.expenses" target="_blank">
+      Baixar na Play Store
+    </a>
+  </div>
+
+  <!-- Card 2 - Limpador de Som -->
+  <div class="card">
+    <img class="speaker-cleaner-icon" src="assets/images/speaker-cleaner-icon.png" alt="Limpador de Som">
+    <h2>Limpador de Som</h2>
+    <a href="https://play.google.com/store/apps/details?id=br.com.codeinnovationapps.speaker_cleaner" target="_blank">
+      Baixar na Play Store
+    </a>
+  </div>
+</div>
+
 </body>
 </html>
