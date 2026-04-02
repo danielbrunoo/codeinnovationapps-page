@@ -71,6 +71,13 @@ h1 {
   margin-bottom: 15px;
 }
 
+.obrasmart {
+  width: 110px;  /* ajuste diferente do outro ícone */
+  height: 110px;
+  border-radius: 20%;
+  margin-bottom: 15px;
+}
+
 .card h2 {
   font-size: 20px;
   margin-bottom: 15px;
