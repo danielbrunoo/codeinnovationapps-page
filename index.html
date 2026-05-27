@@ -17,6 +17,7 @@
     <span class="bg-effects__orb bg-effects__orb--2"></span>
     <span class="bg-effects__orb bg-effects__orb--3"></span>
   </div>
+  <div class="cursor-glow" aria-hidden="true"></div>
 
   <header class="site-header">
     <img
@@ -26,8 +27,8 @@
       width="300"
       height="auto"
     >
-    <h1 class="site-header__title">Baixe nossos aplicativos</h1>
-    <p class="site-header__subtitle">Ferramentas práticas para o seu dia a dia,<br>disponíveis na Play Store.</p>
+    <h1 class="site-header__title" data-glass-text>Baixe nossos aplicativos</h1>
+    <p class="site-header__subtitle" data-glass-text>Ferramentas práticas para o seu dia a dia,<br>disponíveis na Play Store.</p>
   </header>
 
   <main class="apps-grid" aria-label="Aplicativos">
@@ -119,5 +120,7 @@
       </a>
     </article>
   </main>
+  <script src="cursor.js" defer></script>
+  <script src="text-glass.js" defer></script>
 </body>
 </html>

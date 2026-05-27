@@ -128,10 +128,47 @@ body::before {
 }
 
 /* --------------------------------------------------------------------------
+   Cursor spotlight
+   -------------------------------------------------------------------------- */
+
+.cursor-glow {
+  position: fixed;
+  width: min(360px, 70vw);
+  height: min(360px, 70vw);
+  left: var(--mouse-x, 50%);
+  top: var(--mouse-y, 50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  background: radial-gradient(
+    circle,
+    rgba(107, 143, 255, 0.22) 0%,
+    rgba(79, 124, 255, 0.1) 40%,
+    transparent 70%
+  );
+  transition: opacity 0.35s ease;
+  will-change: left, top;
+}
+
+html.cursor-glow-visible .cursor-glow {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .cursor-glow {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Header
    -------------------------------------------------------------------------- */
 
 .site-header {
+  position: relative;
+  z-index: 1;
   text-align: center;
   padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 2rem) clamp(0.5rem, 2vw, 1rem);
   width: 100%;
@@ -150,8 +187,11 @@ body::before {
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 4.5vw, 2.25rem);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.35;
   margin: 0 0 0.5rem;
+}
+
+.site-header__title:not(.glass-text) {
   background: linear-gradient(135deg, #ffffff 0%, var(--accent-glow) 50%, #c8d8ff 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -164,6 +204,93 @@ body::before {
   color: var(--text-secondary);
   max-width: 32rem;
   margin-inline: auto;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Glass text — hover por palavra
+   -------------------------------------------------------------------------- */
+
+.glass-text__word {
+  position: relative;
+  display: inline-block;
+  border-radius: 0.45em;
+  cursor: default;
+  outline: none;
+  transition: transform var(--transition-smooth);
+}
+
+.glass-text__word::before {
+  content: "";
+  position: absolute;
+  inset: -0.12em -0.28em;
+  z-index: 0;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 8px 28px rgba(79, 124, 255, 0.2);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  opacity: 0;
+  transform: scale(0.9);
+  transition:
+    opacity var(--transition-smooth),
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .glass-text__word::before {
+    background: rgba(26, 37, 96, 0.85);
+  }
+}
+
+.glass-text__word:hover::before,
+.glass-text__word:focus-visible::before {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 12px 36px rgba(79, 124, 255, 0.28);
+}
+
+.glass-text__word:hover,
+.glass-text__word:focus-visible {
+  transform: translateY(-2px);
+}
+
+.glass-text__word-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.site-header__title.glass-text .glass-text__word-inner {
+  background: linear-gradient(135deg, #ffffff 0%, var(--accent-glow) 50%, #c8d8ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition:
+    -webkit-text-fill-color var(--transition-smooth),
+    text-shadow var(--transition-smooth);
+}
+
+.site-header__title.glass-text .glass-text__word:hover .glass-text__word-inner,
+.site-header__title.glass-text .glass-text__word:focus-visible .glass-text__word-inner {
+  background: none;
+  -webkit-text-fill-color: #f0f4ff;
+  text-shadow: 0 0 24px rgba(107, 143, 255, 0.55);
+}
+
+.site-header__subtitle.glass-text .glass-text__word-inner {
+  color: var(--text-secondary);
+  transition: color var(--transition-smooth);
+}
+
+.site-header__subtitle.glass-text .glass-text__word:hover .glass-text__word-inner,
+.site-header__subtitle.glass-text .glass-text__word:focus-visible .glass-text__word-inner {
+  color: var(--text-primary);
 }
 
 /* --------------------------------------------------------------------------
@@ -171,6 +298,8 @@ body::before {
    -------------------------------------------------------------------------- */
 
 .apps-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: clamp(1rem, 3vw, 1.75rem);
@@ -409,6 +538,20 @@ body::before {
   }
 
   .app-card:hover .app-card__icon {
+    transform: none;
+  }
+
+  .cursor-glow {
+    display: none;
+  }
+
+  .glass-text__word:hover,
+  .glass-text__word:focus-visible {
+    transform: none;
+  }
+
+  .glass-text__word::before {
+    opacity: 0;
     transform: none;
   }
 }
