@@ -3,53 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meus Aplicativos</title>
+  <meta name="description" content="Baixe os aplicativos da Code Innovation Apps na Google Play Store.">
+  <meta name="theme-color" content="#0a0e2e">
+  <title>Code Innovation Apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <!-- Logo da empresa -->
-    <img src="assets/images/code-innovation-apps-img.png" alt="Logo Code Innovation">
-    <h1>Baixe nossos aplicativos</h1>
+  <div class="bg-effects" aria-hidden="true">
+    <span class="bg-effects__orb bg-effects__orb--1"></span>
+    <span class="bg-effects__orb bg-effects__orb--2"></span>
+    <span class="bg-effects__orb bg-effects__orb--3"></span>
+  </div>
+
+  <header class="site-header">
+    <img
+      class="site-header__logo"
+      src="assets/images/code-innovation-apps-img.png"
+      alt="Code Innovation Apps"
+      width="300"
+      height="auto"
+    >
+    <h1 class="site-header__title">Baixe nossos aplicativos</h1>
+    <p class="site-header__subtitle">Ferramentas práticas para o seu dia a dia,<br>disponíveis na Play Store.</p>
   </header>
 
-  <div class="container">
+  <main class="apps-grid" aria-label="Aplicativos">
+    <article class="app-card">
+      <img
+        class="app-card__icon"
+        src="assets/images/expenses-icon.png"
+        alt=""
+        width="110"
+        height="110"
+      >
+      <h2 class="app-card__title">Minhas Despesas</h2>
+      <a
+        class="app-card__cta"
+        href="https://play.google.com/store/apps/details?id=br.com.codeinnovationapps.expenses"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="app-card__cta-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+          <path d="M3 20.5V3.5C3 2.91 3.54 2.5 4.07 2.91L20.07 11.41C20.62 11.74 20.62 12.47 20.07 12.8L4.07 21.3C3.54 21.71 3 21.29 3 20.5Z"/>
+        </svg>
+        Baixar na Play Store
+      </a>
+    </article>
 
-  <!-- Card 1 - Minhas Despesas -->
-  <div class="card">
-    <img class="expenses" src="assets/images/expenses-icon.png" alt="Minhas Despesas">
-    <h2>Minhas Despesas</h2>
-    <a href="https://play.google.com/store/apps/details?id=br.com.codeinnovationapps.expenses" target="_blank">
-      Baixar na Play Store
-    </a>
-  </div>
+    <article class="app-card">
+      <img
+        class="app-card__icon"
+        src="assets/images/speaker-cleaner-icon.png"
+        alt=""
+        width="110"
+        height="110"
+      >
+      <h2 class="app-card__title">Limpador de Som</h2>
+      <a
+        class="app-card__cta"
+        href="https://play.google.com/store/apps/details?id=br.com.codeinnovationapps.speaker_cleaner"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="app-card__cta-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+          <path d="M3 20.5V3.5C3 2.91 3.54 2.5 4.07 2.91L20.07 11.41C20.62 11.74 20.62 12.47 20.07 12.8L4.07 21.3C3.54 21.71 3 21.29 3 20.5Z"/>
+        </svg>
+        Baixar na Play Store
+      </a>
+    </article>
 
-  <!-- Card 2 - Limpador de Som -->
-  <div class="card">
-    <img class="speaker-cleaner" src="assets/images/speaker-cleaner-icon.png" alt="Limpador de Som">
-    <h2>Limpador de Som</h2>
-    <a href="https://play.google.com/store/apps/details?id=br.com.codeinnovationapps.speaker_cleaner" target="_blank">
-      Baixar na Play Store
-    </a>
-  </div>
+    <article class="app-card">
+      <img
+        class="app-card__icon"
+        src="assets/images/drink-water-icon.png"
+        alt=""
+        width="110"
+        height="110"
+      >
+      <h2 class="app-card__title">Beba Água</h2>
+      <a
+        class="app-card__cta"
+        href="https://play.google.com/store/apps/details?id=br.com.codeinnovationapps.drink_water"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="app-card__cta-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+          <path d="M3 20.5V3.5C3 2.91 3.54 2.5 4.07 2.91L20.07 11.41C20.62 11.74 20.62 12.47 20.07 12.8L4.07 21.3C3.54 21.71 3 21.29 3 20.5Z"/>
+        </svg>
+        Baixar na Play Store
+      </a>
+    </article>
 
-<!-- Card 3 - Beba Água -->
-<div class="card">
-  <img class="drink-water" src="assets/images/drink-water-icon.png" alt="Beba Água">
-  <h2>Beba Água</h2>
-  <a href="https://play.google.com/store/apps/details?id=br.com.codeinnovationapps.drink_water" target="_blank">
-    Baixar na Play Store
-  </a>
-</div>
-
-<!-- Card 4 - ObraSmart -->
-<div class="card">
-  <img class="obrasmart" src="assets/images/obrasmart-icon.png" alt="ObraSmart">
-  <h2>ObraSmart</h2>
-  <a href="https://play.google.com/store/apps/details?id=br.com.codeinnovationapps.obrasmart" target="_blank">
-    Baixar na Play Store
-  </a>
-</div>
-</div>
+    <article class="app-card">
+      <img
+        class="app-card__icon"
+        src="assets/images/obrasmart-icon.png"
+        alt=""
+        width="110"
+        height="110"
+      >
+      <h2 class="app-card__title">ObraSmart</h2>
+      <a
+        class="app-card__cta"
+        href="https://play.google.com/store/apps/details?id=br.com.codeinnovationapps.obrasmart"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="app-card__cta-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+          <path d="M3 20.5V3.5C3 2.91 3.54 2.5 4.07 2.91L20.07 11.41C20.62 11.74 20.62 12.47 20.07 12.8L4.07 21.3C3.54 21.71 3 21.29 3 20.5Z"/>
+        </svg>
+        Baixar na Play Store
+      </a>
+    </article>
+  </main>
 </body>
 </html>
